@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Reset de márgenes y padding para asegurar una apariencia consistente */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@ body {
     background-image: url('images/pexels-timonreinhard-29127290.jpg');
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Courier Prime', monospace; 
+    font-family: 'Courier Prime', monospace; /* Fuente desde Google Fonts */
     font-size: large;
 }
 
@@ -30,7 +30,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 10;
+    padding: 10px;
     background-color: #DAEBB3;
     position: relative;
 }
@@ -100,6 +100,7 @@ header {
         right: 0;
         padding: 15px;
         border-radius: 0 0 10px 10px;
+        background-color: #DAEBB3; /* Fondo del menú en dispositivos móviles */
     }
     .menu-toggle {
         display: block; /* Muestra el botón en móviles */
@@ -125,12 +126,81 @@ main a:hover {
     text-decoration: underline;
 }
 
+/* Estilos del contenedor del texto y la imagen en el main */
+.main-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contenedor-texto {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 20px;
+}
+
+/* Estilo para la imagen en el main */
+.contenedor-imagen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.imagen-portada {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 /* Footer */
 footer {
     padding: 15px;
     text-align: center;
-    background-color: #daebb3;
+    background-color: #DAEBB3;
     color: rgb(78, 63, 30);
     border-radius: 0 0 10px 10px;
     font-size: 0.6em;
+}
+
+/* Media Queries adicionales para hacer el diseño responsive */
+@media (max-width: 1024px) {
+    .main-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contenedor-texto p {
+        font-size: 1.1em;
+    }
+
+    .imagen-portada {
+        max-width: 100%;
+    }
+}
+
+/* Para pantallas grandes (desde 1024px hacia arriba) */
+@media (min-width: 1024px) {
+    .main-contenido {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contenedor-texto {
+        width: 50%;
+        margin-right: 20px;
+    }
+
+    .contenedor-imagen {
+        width: 45%;
+    }
+
+    .imagen-portada {
+        width: 100%;
+        max-width: 500px;
+    }
 }
